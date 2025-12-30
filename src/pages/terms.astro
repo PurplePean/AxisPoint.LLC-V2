@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+
+const title = 'Terms of Service | AxisPoint';
+const description = 'AxisPoint terms of service and usage terms.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <section class="section-padding bg-white">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="font-headline text-4xl md:text-5xl text-text mb-8">
+            Terms of Service
+          </h1>
+
+          <div class="prose prose-lg max-w-none">
+            <p class="text-text-muted mb-6">
+              Last updated: {new Date().toLocaleDateString()}
+            </p>
+
+            <section class="mb-8">
+              <h2 class="font-headline text-2xl text-text mb-4">
+                Acceptance of Terms
+              </h2>
+              <p class="text-text-muted mb-4">
+                By accessing and using this website and our services, you accept
+                and agree to be bound by the terms and provisions of this
+                agreement.
+              </p>
+            </section>
+
+            <section class="mb-8">
+              <h2 class="font-headline text-2xl text-text mb-4">
+                Use of Services
+              </h2>
+              <p class="text-text-muted mb-4">
+                Our services are provided for informational and advisory
+                purposes. Any reliance you place on such information is strictly
+                at your own risk.
+              </p>
+            </section>
+
+            <section class="mb-8">
+              <h2 class="font-headline text-2xl text-text mb-4">
+                Professional Services
+              </h2>
+              <p class="text-text-muted mb-4">
+                AxisPoint provides investment advisory and asset management
+                services. Specific terms and conditions for professional
+                services are provided in separate engagement agreements.
+              </p>
+            </section>
+
+            <section class="mb-8">
+              <h2 class="font-headline text-2xl text-text mb-4">
+                Limitation of Liability
+              </h2>
+              <p class="text-text-muted mb-4">
+                AxisPoint LLC shall not be liable for any indirect, incidental,
+                special, consequential, or punitive damages resulting from your
+                use of or inability to use the service.
+              </p>
+            </section>
+
+            <section class="mb-8">
+              <h2 class="font-headline text-2xl text-text mb-4">
+                Modifications
+              </h2>
+              <p class="text-text-muted mb-4">
+                We reserve the right to modify these terms at any time. Continued
+                use of the website following any changes constitutes acceptance
+                of those changes.
+              </p>
+            </section>
+
+            <section class="mb-8">
+              <h2 class="font-headline text-2xl text-text mb-4">Contact</h2>
+              <p class="text-text-muted mb-4">
+                For questions about these Terms of Service, please contact us at{' '}
+                <a
+                  href="mailto:contact@axispoint.com"
+                  class="text-primary hover:text-primary-hover"
+                >
+                  contact@axispoint.com
+                </a>
+                .
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

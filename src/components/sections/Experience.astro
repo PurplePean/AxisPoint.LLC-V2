@@ -1,0 +1,64 @@
+---
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+
+const caseStudies = [
+  {
+    title: 'Multifamily Acquisition Review',
+    situation:
+      'A private investor was preparing to acquire a 48-unit multifamily property based on broker-provided underwriting.',
+    outcome:
+      'The client renegotiated the purchase price by $400K after we identified deferred maintenance not reflected in the pro forma.',
+  },
+  {
+    title: 'Retail Portfolio Hold/Sell Analysis',
+    situation:
+      'A family office needed clarity on whether to hold, sell, or reinvest across a 12-property retail portfolio.',
+    outcome:
+      'The client sold three underperforming assets and redeployed capital into two higher-conviction acquisitions.',
+  },
+];
+---
+
+<section class="section-padding bg-surface">
+  <div class="container-custom">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-4xl md:text-5xl text-text mb-4">
+        How we've helped
+      </h2>
+      <p class="text-lg text-text-muted max-w-2xl mx-auto">
+        A few examples of how we've supported owners and investors.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {
+        caseStudies.map((study) => (
+          <Card>
+            <h3 class="font-headline text-xl md:text-2xl text-text mb-4">
+              {study.title}
+            </h3>
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-2">
+                  Situation
+                </h4>
+                <p class="text-base text-text">{study.situation}</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-2">
+                  Outcome
+                </h4>
+                <p class="text-base text-text">{study.outcome}</p>
+              </div>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+
+    <div class="text-center mt-12">
+      <Button href="/experience" variant="outline">View More Examples</Button>
+    </div>
+  </div>
+</section>

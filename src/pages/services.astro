@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Card from '../components/ui/Card.astro';
+import Button from '../components/ui/Button.astro';
+
+const title = 'Services | AxisPoint';
+const description =
+  'Investment advisory and asset management services for commercial real estate investors and owners.';
+
+const services = [
+  {
+    id: 'investment-advisory',
+    title: 'Investment Advisory',
+    description:
+      'We help investors and owners make better capital decisions through disciplined underwriting and assumption testing.',
+    focusAreas: [
+      'Pre-acquisition underwriting and model review',
+      'Assumption stress-testing and sensitivity analysis',
+      'Portfolio-level analysis and hold/sell decisions',
+      'Due diligence review and verification',
+      'Market and comparable analysis',
+      'Risk identification and mitigation planning',
+    ],
+  },
+  {
+    id: 'asset-management',
+    title: 'Asset Management',
+    description:
+      'Ongoing stewardship of commercial real estate assets after capital is deployed, ensuring properties perform as expected.',
+    focusAreas: [
+      'Day-to-day property oversight and coordination',
+      'Performance monitoring against underwriting',
+      'Vendor and property management oversight',
+      'Regular owner reporting and communication',
+      'Budget development and variance analysis',
+      'Capital improvement planning and execution',
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="section-padding-sm bg-surface">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="font-headline text-5xl md:text-6xl text-text mb-6">
+            Services
+          </h1>
+          <p class="text-xl text-text-muted">
+            We provide two core services, both grounded in disciplined
+            underwriting and clear decision-making.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Details -->
+    <section class="section-padding bg-white">
+      <div class="container-custom max-w-5xl">
+        <div class="space-y-20">
+          {
+            services.map((service) => (
+              <div id={service.id} class="scroll-mt-24">
+                <Card>
+                  <h2 class="font-headline text-3xl md:text-4xl text-text mb-4">
+                    {service.title}
+                  </h2>
+                  <p class="text-lg text-text-muted mb-8">
+                    {service.description}
+                  </p>
+
+                  <h3 class="text-sm font-semibold text-text-muted uppercase tracking-wider mb-4">
+                    Key Focus Areas
+                  </h3>
+                  <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {service.focusAreas.map((area) => (
+                      <li class="flex items-start">
+                        <svg
+                          class="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          />
+                        </svg>
+                        <span class="text-base text-text">{area}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div class="mt-8">
+                    <Button href="/contact#form" variant="primary">
+                      Request a Review
+                    </Button>
+                  </div>
+                </Card>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding bg-surface">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-headline text-3xl md:text-4xl text-text mb-6">
+            Ready to get started?
+          </h2>
+          <p class="text-lg text-text-muted mb-8">
+            Most engagements begin with a simple conversation about your
+            decision.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button href="/contact#form" variant="primary" size="lg">
+              Request a Review
+            </Button>
+            <a
+              href="https://calendar.app.google/N2UcZCp8Vo4yTxMj7"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-lg font-medium text-primary hover:text-primary-hover transition-colors duration-200"
+            >
+              Book a Call →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
