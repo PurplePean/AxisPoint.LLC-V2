@@ -1,0 +1,25 @@
+---
+const principles = [
+  'We stress-test assumptions before capital moves.',
+  'Clear judgment matters more than complex models.',
+  'Every engagement starts with understanding the decision at hand.',
+];
+---
+
+<section class="section-padding bg-white">
+  <div class="container-custom">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      {
+        principles.map((principle, index) => (
+          <div
+            class={`text-center animate-fade-up opacity-0 animate-delay-${(index + 1) * 100}`}
+          >
+            <p class="text-xl md:text-2xl font-headline text-text leading-relaxed">
+              {principle}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

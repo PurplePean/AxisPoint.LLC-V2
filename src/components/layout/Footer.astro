@@ -1,0 +1,88 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+  company: [
+    { name: 'Services', href: '/services' },
+    { name: 'Education', href: '/education' },
+    { name: 'Experience', href: '/experience' },
+    { name: 'Contact', href: '/contact' },
+  ],
+  legal: [
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms of Service', href: '/terms' },
+  ],
+};
+---
+
+<footer class="bg-dark-bg text-dark-text">
+  <div class="container-custom section-padding">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <!-- Logo and tagline -->
+      <div class="md:col-span-5">
+        <a href="/" class="inline-block mb-6 hover-opacity">
+          <img
+            src="/assets/logo/Transparent_AXP_LOGO.svg"
+            alt="AxisPoint"
+            class="h-12 w-auto brightness-0 invert"
+            onerror="this.onerror=null; this.src='/assets/logo/Transparent_AXP_LOGO.png';"
+          />
+        </a>
+        <p class="text-dark-muted max-w-md">
+          Investment advisory and asset management for commercial real estate
+          owners and investors, grounded in disciplined underwriting and clear
+          decision-making.
+        </p>
+      </div>
+
+      <!-- Company Links -->
+      <div class="md:col-span-3">
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">
+          Company
+        </h4>
+        <ul class="space-y-3">
+          {
+            footerLinks.company.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-dark-muted hover:text-dark-text transition-colors duration-200"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Legal Links -->
+      <div class="md:col-span-4">
+        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">
+          Legal
+        </h4>
+        <ul class="space-y-3">
+          {
+            footerLinks.legal.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-dark-muted hover:text-dark-text transition-colors duration-200"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-8 border-t border-gray-700">
+      <p class="text-sm text-dark-muted text-center">
+        &copy; {currentYear} AxisPoint LLC. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>

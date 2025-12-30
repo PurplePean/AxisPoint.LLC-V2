@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Principles from '../components/sections/Principles.astro';
+import Services from '../components/sections/Services.astro';
+import Process from '../components/sections/Process.astro';
+import Experience from '../components/sections/Experience.astro';
+import Engagement from '../components/sections/Engagement.astro';
+import FinalCTA from '../components/sections/FinalCTA.astro';
+
+const title = 'AxisPoint | CRE Asset Management & Investment Advisory';
+const description =
+  'Investment advisory and asset management for commercial real estate owners and investors, grounded in disciplined underwriting and clear decision-making.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <Hero />
+    <Principles />
+    <Services />
+    <Process />
+    <Experience />
+    <Engagement />
+    <FinalCTA />
+  </main>
+  <Footer />
+</BaseLayout>

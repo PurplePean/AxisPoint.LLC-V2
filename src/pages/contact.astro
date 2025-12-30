@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import ContactForm from '../components/ContactForm';
+
+const title = 'Contact | AxisPoint';
+const description =
+  'Get in touch with AxisPoint for investment advisory and asset management services.';
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <!-- Hero Section -->
+    <section class="section-padding-sm bg-surface">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="font-headline text-5xl md:text-6xl text-text mb-6">
+            Contact
+          </h1>
+          <p class="text-xl text-text-muted">
+            Share what you're working on, and we'll tell you how we can help.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="form" class="section-padding bg-white scroll-mt-24">
+      <div class="container-custom">
+        <div class="max-w-2xl mx-auto">
+          <ContactForm client:load />
+
+          <!-- Alternative Contact -->
+          <div class="mt-12 pt-8 border-t border-border text-center">
+            <p class="text-text-muted mb-4">Prefer to schedule directly?</p>
+            <a
+              href="https://calendar.app.google/N2UcZCp8Vo4yTxMj7"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center text-lg font-medium text-primary hover:text-primary-hover transition-colors duration-200"
+            >
+              Book a Call →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Info -->
+    <section class="section-padding-sm bg-surface">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="font-headline text-3xl md:text-4xl text-text mb-6">
+            What to expect
+          </h2>
+          <p class="text-lg text-text-muted">
+            Most initial conversations take 20-30 minutes. We'll discuss what
+            you're working on, answer any questions you have, and determine if
+            we're a good fit. No pitch. No pressure.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,56 @@
+---
+import Card from '../ui/Card.astro';
+import Button from '../ui/Button.astro';
+
+const services = [
+  {
+    title: 'Investment Advisory',
+    description:
+      "Pre-acquisition underwriting, assumption testing, and portfolio analysis. We help you see what the numbers aren't telling you.",
+    href: '/services#investment-advisory',
+  },
+  {
+    title: 'Asset Management',
+    description:
+      'Ongoing oversight of real assets. We handle operations, reporting, and owner communication so you can focus on the portfolio.',
+    href: '/services#asset-management',
+  },
+];
+---
+
+<section class="section-padding bg-surface">
+  <div class="container-custom">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-4xl md:text-5xl text-text mb-4">
+        What We Do
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+      {
+        services.map((service) => (
+          <Card hover class="flex flex-col">
+            <h3 class="font-headline text-2xl md:text-3xl text-text mb-4">
+              {service.title}
+            </h3>
+            <p class="text-lg text-text-muted mb-6 flex-1">
+              {service.description}
+            </p>
+            <div>
+              <a
+                href={service.href}
+                class="inline-flex items-center text-primary hover:text-primary-hover font-medium transition-colors duration-200"
+              >
+                Learn more →
+              </a>
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+
+    <div class="text-center mt-12">
+      <Button href="/services" variant="outline">View All Services</Button>
+    </div>
+  </div>
+</section>

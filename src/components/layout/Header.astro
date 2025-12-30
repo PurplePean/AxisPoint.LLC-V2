@@ -1,0 +1,67 @@
+---
+import Button from '../ui/Button.astro';
+import MobileNav from './MobileNav';
+
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Education', href: '/education' },
+  { name: 'Contact', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-border">
+  <div class="container-custom">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center hover-opacity">
+        <img
+          src="/assets/logo/Transparent_AXP_LOGO.svg"
+          alt="AxisPoint"
+          class="h-12 w-auto"
+          onerror="this.onerror=null; this.src='/assets/logo/Transparent_AXP_LOGO.png';"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center space-x-8">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class={`text-base font-medium transition-colors duration-200 ${
+                currentPath === item.href
+                  ? 'text-primary'
+                  : 'text-text-muted hover:text-text'
+              }`}
+            >
+              {item.name}
+            </a>
+          ))
+        }
+      </nav>
+
+      <!-- Desktop CTAs -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <Button href="/contact#form" variant="primary" size="sm">
+          Request a Review
+        </Button>
+        <a
+          href="https://calendar.app.google/N2UcZCp8Vo4yTxMj7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-base font-medium text-primary hover:text-primary-hover transition-colors duration-200"
+        >
+          Book a Call
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="lg:hidden">
+        <MobileNav client:load navItems={navItems} />
+      </div>
+    </div>
+  </div>
+</header>
