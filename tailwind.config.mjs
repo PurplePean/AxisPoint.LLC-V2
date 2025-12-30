@@ -21,6 +21,7 @@ export default {
           DEFAULT: '#F9FAFB',
           alt: '#F3F4F6',
         },
+        border: '#E5E7EB',
         dark: {
           bg: '#111827',
           text: '#F9FAFB',
